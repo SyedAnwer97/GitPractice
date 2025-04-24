@@ -1,0 +1,52 @@
+# IntelliJ IDEA specific
+.idea/
+*.iml
+*.iws
+out/
+gen/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build system
+target/
+build/
+
+# Logs
+*.log
+
+# Maven
+log/
+*.class
+dependency-reduced-pom.xml
+release.properties
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Selenium related
+test-output/
+selenium-screenshots/
+*.swp
+
+# Environment and temporary files
+*.tmp
+*.bak
+*.swo
+*.swn
+
+# Ignore config files
+*.env
+.env.local
+.env.*.local
+
+# Ignore Eclipse files if switching IDEs
+.project
+.classpath
+.settings/
+
+# Optional: Ignore test results or screenshots
+reports/
+screenshots/
