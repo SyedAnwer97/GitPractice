@@ -6,17 +6,16 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class BrowserManger {
-
-    private static WebDriver driver = null;
+    
 
     public static WebDriver initBrowser(String browser) {
-        driver = BrowserFactory.BrowserDriver(browser);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        return driver;
+        Browser.setBrowser(BrowserFactory.BrowserDriver(browser));
+        Browser.getBrowser().manage().window().maximize();
+        Browser.getBrowser().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return Browser.getBrowser();
     }
 
     public static void tearDownBrowser() {
-        driver.quit();
+        Browser.getBrowser().quit();
     }
 }
