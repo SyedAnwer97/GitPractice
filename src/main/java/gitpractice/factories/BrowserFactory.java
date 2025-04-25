@@ -1,5 +1,6 @@
 package gitpractice.factories;
 
+import gitpractice.enums.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,7 +21,7 @@ public class BrowserFactory {
         BROWSER_MAP.put("firefox", FIREFOX);
     }
 
-    public static WebDriver BrowserDriver(String browser) {
-        return BROWSER_MAP.get(browser).get();
+    public static WebDriver BrowserDriver(Browser browser) {
+        return BROWSER_MAP.get(browser.name().toLowerCase()).get();
     }
 }
