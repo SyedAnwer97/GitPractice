@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class BrowserManger {
-    
 
-    public static WebDriver initBrowser(String browser) {
+
+    public static WebDriver initBrowser(gitpractice.enums.Browser browser) {
         Browser.setBrowser(BrowserFactory.BrowserDriver(browser));
         Browser.getBrowser().manage().window().maximize();
         Browser.getBrowser().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
