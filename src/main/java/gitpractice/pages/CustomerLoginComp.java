@@ -1,6 +1,6 @@
 package gitpractice.pages;
 
-import gitpractice.browser.Browser;
+import gitpractice.browser.BrowserManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
@@ -12,20 +12,20 @@ public class CustomerLoginComp {
     private static final By BTN_LOGIN = By.id("logmein");
 
     public void selectLanguage() {
-        Select select = new Select(Browser.getBrowser().findElement(DROPDOWN_LANGUAGE));
+        Select select = new Select(BrowserManager.getDriver().findElement(DROPDOWN_LANGUAGE));
         select.selectByVisibleText("English");
     }
 
     public void enterUsername() {
-        Browser.getBrowser().findElement(TEXTBOX_CUSTOMER_NAME).sendKeys("sch-dev");
+        BrowserManager.getDriver().findElement(TEXTBOX_CUSTOMER_NAME).sendKeys("sch-dev");
     }
 
     public void enterPassword() {
-        Browser.getBrowser().findElement(TEXTBOX_PASSWORD).sendKeys("sch-dev");
+        BrowserManager.getDriver().findElement(TEXTBOX_PASSWORD).sendKeys("sch-dev");
     }
 
     public void clickLoginButton() {
-        Browser.getBrowser().findElement(BTN_LOGIN).click();
+        BrowserManager.getDriver().findElement(BTN_LOGIN).click();
     }
 
 }
