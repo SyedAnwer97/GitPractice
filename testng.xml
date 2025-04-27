@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="3"  >
+
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+
+    <!-- Test Configuration for GitPractice -->
     <test verbose="2" name="GitPractice" parallel="methods" thread-count="3">
+
+        <!-- Define test classes and their respective methods -->
         <classes>
+
+            <!-- Class: MvnRepoPageTest -->
             <class name="gitlearning.MvnRepoPageTest">
                 <methods>
                     <include name="mvnRepoTitleTest"/>
                 </methods>
             </class>
+
+            <!-- Class: SeleniumWebsiteTest -->
             <class name="gitlearning.SeleniumWebsiteTest">
                 <methods>
                     <include name="checkDownloadsTabTest"/>
@@ -15,6 +24,15 @@
                     <include name="checkProjectsTabTest"/>
                 </methods>
             </class>
+
+            <!-- Class: AlfaDOCKTest -->
+            <class name="gitlearning.AlfaDOCKTest">
+                <methods>
+                    <include name="AlfaDOCKCustomerLoginTest"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
+
 </suite>

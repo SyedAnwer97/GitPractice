@@ -1,20 +1,21 @@
 package gitpractice.browser;
 
+import gitpractice.factories.BrowserFactory;
 import org.openqa.selenium.WebDriver;
+
+import java.time.Duration;
 
 public class Browser {
 
-    private static final ThreadLocal<WebDriver> WEB_DRIVER_THREAD_LOCAL = new ThreadLocal<>();
 
-    public static void setBrowser(WebDriver driver) {
-        WEB_DRIVER_THREAD_LOCAL.set(driver);
+    public static WebDriver initBrowser(gitpractice.enums.Browser browser) {
+        BrowserManager.setDriver(BrowserFactory.getBrowserDriver(browser));
+        BrowserManager.getDriver().manage().window().maximize();
+        BrowserManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return BrowserManager.getDriver();
     }
 
-    public static WebDriver getBrowser() {
-        return WEB_DRIVER_THREAD_LOCAL.get();
-    }
-
-    public static void unload() {
-        WEB_DRIVER_THREAD_LOCAL.remove();
+    public static void tearDownBrowser() {
+        BrowserManager.getDriver().quit();
     }
 }
